@@ -15,7 +15,7 @@ $response = json_decode($resp);
 
 
 //Add the invoice to the database
-$stmt = $db->prepare("UPDATE invoices SET address = ? WHERE invoice_id = ?");
+$stmt = $db->prepare("UPDATE invoices SET address = ? WHERE invoice_id = ?");  //<----there is no address column on this table!
 $stmt->bind_param("si", $response->address, $invoice_id);
 $result = $stmt->execute();
 
